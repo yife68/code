@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 通过display:flex;将内容水平竖直居中 */
+body {
+    display: flex;
+    justify-content: center;    /* 水平方向居中,与display:flex;一起用 */
+    align-items: center;    /* 竖直方向居中,与display:flex;一起用 */
+    min-height: 100vh;
+    background: #000;
+}
+
+/* loader样式 */
+.loader {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* 设计线性背景，配合filter做出颜色变换的效果 */
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);  
+    animation: animate 2s linear infinite;
+}
+
+/* 渐变动画 */
+@keyframes animate{
+    from{
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.loader::before, .loader::after{
+    content: '';
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+/* 主要用于遮挡loader成环形 */
+.loader::before {
+    top: 6px;
+    left: 6px;
+    bottom: 6px;
+    right: 6px;
+}
+
+/* 主要作用是设计外发光 */
+.loader::after{
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+    filter: blur(30px);
+    z-index: 1;
+}
