@@ -1,0 +1,72 @@
+*{
+    /* 初始化 取消页面元素的内外边距 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 100%窗口高度 */
+    height: 100vh;
+    /* 弹性布局 水平、垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 
+    background: linear-gradient(200deg,#00c6fb,#66a6ff);
+    */
+}
+
+@keyframes leftToright {
+    0% {
+        transform: translate(-20px, 0);
+    }
+    100% {
+        transform: translate(20px, 0);
+    }
+}
+.cloud {
+    animation: leftToright 10s ease-in infinite alternate;
+}
+@keyframes leftToright1 {
+    0% {
+        transform: translate(-70px, 0);
+    }
+    100% {
+        transform: translate(30px, 0);
+    }
+}
+.cloud1 {
+    animation: leftToright1 10s ease-in infinite alternate;
+}
+@keyframes animationhole {
+    0% {
+        transform: translate(345px, 395px) scale(0.5) translate(-345px, -395px);
+    }
+    100% {
+        transform: translate(345px, 395px) scale(1) translate(-345px, -395px);
+    }
+}
+.hole {
+    animation: animationhole 3s ease-in infinite alternate;
+}
+@keyframes moveline {
+    0% {
+        transform: translate(340px, 135px) rotate(-8deg) translate(-340px, -135px);
+    }
+    100% {
+        transform: translate(340px, 135px) rotate(8deg) translate(-340px, -135px);
+    }
+}
+.line {
+    animation: moveline 5s ease-in infinite alternate;
+}
+@keyframes movecard {
+    0% {
+        transform: translate(340px, 135px) rotate(-8deg) translate(-340px, -135px);
+    }
+    100% {
+        transform: translate(340px, 135px) rotate(8deg) translate(-340px, -135px);
+    }
+}
+.card {
+    animation: movecard 5s ease-in infinite alternate;
+}
