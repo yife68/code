@@ -1,0 +1,78 @@
+const prizeImg = {
+    src: 'https://cdn.jsdelivr.net/gh/buuing/cdn/demo/prize.png',
+    width: '35%',
+    top: '43%'
+  }
+  const myLucky = new LuckyCanvas.LuckyWheel('#my-lucky', {
+    width: '300px',
+    height: '300px',
+    blocks: [{ padding: '10px', background: '#617df2' }],
+    prizes: [
+      {
+        background: '#b8c5f2',
+        fonts: [{ text: '奖品0', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#e9e8fe',
+        fonts: [{ text: '奖品1', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#b8c5f2',
+        fonts: [{ text: '奖品2', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#e9e8fe',
+        fonts: [{ text: '奖品3', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#b8c5f2',
+        fonts: [{ text: '奖品4', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#e9e8fe',
+        fonts: [{ text: '奖品5', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#b8c5f2',
+        fonts: [{ text: '奖品6', top: '10%' }],
+        imgs: [prizeImg]
+      },
+      {
+        background: '#e9e8fe',
+        fonts: [{ text: '奖品7', top: '10%' }],
+        imgs: [prizeImg]
+      },
+    ],
+    buttons: [
+      {
+        radius: '35%',
+        imgs: [{
+          src: 'https://cdn.jsdelivr.net/gh/buuing/cdn/demo/wheel-btn.png',
+          width: '100%',
+          top: '-130%'
+        }]
+      }
+    ],
+    // 点击按钮触发start方法
+    start() {
+      myLucky.play()
+      // 假设接口的请求速度是1.5s
+      setTimeout(() => {
+        // 假设接口返回中奖奖品: 第0个奖品
+        const index = 0
+        // 停止游戏
+        myLucky.stop(index)
+      }, 1500)
+    },
+    // end结束回调
+    end(prizes) {
+      console.log('恭喜你抽中' + prizes.fonts[0].text)
+    }
+  })
+  
