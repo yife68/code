@@ -1,0 +1,7 @@
+.box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: hidden;
+  }
