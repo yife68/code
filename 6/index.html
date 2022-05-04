@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <title>iCat-别踩白块</title>
+        <link rel="shortcut icon" href="https://meuicat.com//media/favicon.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+            <div id="game">
+              <div id="user">
+                <div class="user-info">
+                  <div>分数：<span id="score">0</span></div>
+                  <div>等级：<span id="level">0</span></div>
+                  <div>时间：<span id="time">00:00</span></div>
+                </div>
+                <div class="user-action">
+                  <button id="rule">游戏规则</button>
+                  <button id="fast">急速模式</button>
+                  <button id="endless">无尽模式</button>
+                  <button id="start">开始游戏</button>
+                  <button id="restart">重新开始</button>
+                  <button id="pause">暂停游戏</button>
+                  <button id="continue">继续游戏</button>
+                  <button id="stop">停止游戏</button>
+                </div>
+              </div>
+              <main id="container">
+                <div id="ruleinfo" class="hide">
+                  <h3>&ensp;&ensp;游戏规则</h3>
+                  <ul>
+                    <li>
+                      <strong>如何开始、结束游戏</strong
+                      >：你可以通过开始游戏、重新开始按钮来进行一场新游戏
+                    </li>
+                    <li>
+                      <strong>如何暂停、继续游戏</strong
+                      >：你可以通过暂停游戏、继续游戏按钮来进行一场新游戏，查看游戏规则时会暂停游戏
+                    </li>
+                    <li>
+                      <strong>游戏等级</strong
+                      >：默认模式下，游戏等级默认为1，它会随着游戏进展逐步增加，等级越高，游戏的速度越快
+                    </li>
+                    <li>
+                      <strong>游戏分数</strong
+                      >：游戏分数初始为0，当你点击黑块后，可获得并累加相应的分数，分数计算公式：系数
+                      * 当前等级，在默认模式下，系数的值为1
+                    </li>
+                    <li>
+                      <strong>游戏目标</strong
+                      >：您需要尽可能快的点击黑块，而不要点到白块，从而获取更多的分数；
+                      当黑块从下方移出游戏窗口时仍未被点击，则游戏结束，当您点击了任意一个白块后，游戏结束，游戏结束后，可开始或重新开始游戏
+                      每个块只能被点击一次，如果一行中有黑块被点击，则白块就不能被点击
+                    </li>
+                    <li>
+                      <strong>特殊模式</strong
+                      >：以上规则在默认模式下生效。游戏中含有两种特殊模式，它们是急速模式和无尽模式，特殊模式除了上述规则外还有额外规则；
+                      急速模式：初始等级变为10，等级增加速度变为原来的3倍，得分加成系数变为2，游戏结束规则与模式相同；
+                      无尽模式：初始等级变为5，点击白块后会扣除相应的分数（-1 *
+                      点击黑块应得的分数），游戏不会结束；
+                      特殊模式只能在游戏停止后进行切换、打开或关闭
+                    </li>
+                  </ul>
+                </div>
+                <div id="mask" class="hide">游戏结束</div>
+                <div id="blocks"></div>
+              </main>
+            </div>
+    </body>
+
+    <script src="index.js"></script>   
+
+</html>

@@ -1,0 +1,147 @@
+*{
+  /* 初始化 取消页面元素的内外边距 */
+  margin: 0;
+  padding: 0;
+}
+body{
+  /* 100%窗口高度 */
+  height: 100vh;
+  /* 弹性布局 水平、垂直居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 渐变背景 
+  background: linear-gradient(200deg,#00c6fb,#66a6ff);
+  */
+}
+
+.hide {
+    display: none !important;
+  }
+  
+  #game {
+    height: 600px;
+    width: 420px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 120px calc(100% - 120px);
+    grid-template-rows: 100%;
+    user-select: none;
+  }
+  
+  #user {
+    background: #000;
+    display: grid;
+    color: #fff;
+  }
+  
+  #container {
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #ffffff55;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 700;
+    color: #000;
+  }
+  
+  #ruleinfo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 100;
+    color: #000;
+    overflow-y: auto;
+  }
+  
+  #ruleinfo > ul > li {
+    margin-top: 10px;
+  }
+  
+  #blocks {
+    height: 125%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, 20%);
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+  
+  .block {
+    border: 0.5px solid black;
+  }
+  
+  @keyframes error {
+    0% {
+      background-color: red;
+    }
+    100% {
+      background-color: #aaa;
+    }
+  }
+  
+  .block.error {
+    animation: error 200ms ease 100ms 3;
+  }
+  
+  .isBlack {
+    background: #000;
+  }
+  
+  #user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .user-info {
+    font-weight: 700;
+    width: 100%;
+    padding-left: 15px;
+    line-height: 30px;
+    padding-top: 20px;
+  }
+  
+  #score {
+    font-size: 30px;
+  }
+  
+  .user-action {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    box-sizing: border-box;
+  }
+  
+  .user-action > button {
+    flex: 1;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    margin-top: 1px;
+    font-weight: 700;
+  }
+  
+  .user-action > button:active {
+    transform: scale(0.95);
+  }
+  
