@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body{
+    background-color: #000;
+    perspective: 100px;
+}
+.rotating-plane{
+    width: 64px;
+    height: 64px;
+    position: relative;
+    margin: 30px auto;
+}
+.rotating-plane .child {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: pink;
+    opacity: .6;
+    position: absolute;
+    animation:circle 2s ease-in-out infinite;
+
+}
+.rotating-plane .child-dance2{
+    animation-delay: 1s;
+}
+/* 动画*/
+@keyframes circle
+{
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
